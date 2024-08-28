@@ -1,11 +1,9 @@
 baseURL = "http://neurality.solutions/"
 languageCode = "en-us"
 title = "Neurality Solutions"
+theme = "hugo-fresh"
 
 [params]
   description = "Biosignal interface for immersive interactions"
   contactEmail = "info@neurality.solutions"
 
-[module]
-  [[module.imports]]
-    path = "github.com/jgthms/bulma"
