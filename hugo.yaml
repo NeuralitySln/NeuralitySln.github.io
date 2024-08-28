@@ -40,20 +40,20 @@ params:
   - title: "Contact"
     url: "/contact"
 
-footer:
-  logo: fresh-white-alt.svg
-  socialmediatitle: "Follow Us"
-  socialmedia:
-  - link: "https://github.com/StefMa"
-    icon: github
-  - link: "https://dribbble.com/#"
-    icon: dribbble
-  - link: "https://facebook.com/#"
-    icon: facebook
-  - link: "https://twitter.com/StefMa91"
-    icon: twitter
-  - link: "https://bitbucket.org/#"
-    icon: bitbucket
+# footer:
+#   logo: fresh-white-alt.svg
+#   socialmediatitle: "Follow Us"
+#   socialmedia:
+#   - link: "https://github.com/StefMa"
+#     icon: github
+#   - link: "https://dribbble.com/#"
+#     icon: dribbble
+#   - link: "https://facebook.com/#"
+#     icon: facebook
+#   - link: "https://twitter.com/StefMa91"
+#     icon: twitter
+#   - link: "https://bitbucket.org/#"
+#     icon: bitbucket
   bulmalogo: true
   quicklinks:
     column1:
