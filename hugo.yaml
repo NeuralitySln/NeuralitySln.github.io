@@ -1,0 +1,89 @@
+baseURL: http://neurality.solutions/
+languageCode: en-us
+title: Neurality Solutions
+
+module:
+  imports:
+    - path: github.com/neuromechanist/hugo-fresh
+
+googleAnalytics: # Put in your tracking code without quotes like this: UA-XXX for universal tracking or G-XXX analytics v4 tracking
+
+disableKinds:
+- taxonomy
+- taxonomyTerm
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # Allows you to write raw html in your md files
+
+params:
+  openGraph: true
+  description: "Active Noise Cancellation for Human-Machine Interface"
+  navbarlogo:
+    image: logos/fresh.svg
+    link: /
+  font:
+    name: "Open Sans"
+    sizes: [400,600]
+  hero:
+    title: "Manage. Deploy."
+    subtitle: "Lorem ipsum sit dolor amet is dummy text used by the typography industry"
+    buttontext: "Get started"
+    buttonlink: "#"
+    image: illustrations/worker.svg
+  navbar:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about"
+  - title: "Contact"
+    url: "/contact"
+
+footer:
+  logo: fresh-white-alt.svg
+  socialmediatitle: "Follow Us"
+  socialmedia:
+  - link: "https://github.com/StefMa"
+    icon: github
+  - link: "https://dribbble.com/#"
+    icon: dribbble
+  - link: "https://facebook.com/#"
+    icon: facebook
+  - link: "https://twitter.com/StefMa91"
+    icon: twitter
+  - link: "https://bitbucket.org/#"
+    icon: bitbucket
+  bulmalogo: true
+  quicklinks:
+    column1:
+      title: "Product"
+      links:
+      - text: "Discover features"
+        link: "/"
+      - text: "Why choose our product?"
+        link: "/"
+      - text: "Compare features"
+        link: "/"
+      - text: "Our roadmap"
+        link: "/"
+      - text: "AGB"
+        link: /agb
+    column2:
+      title: "Docs"
+      links:
+      - text: "Get started"
+        link: "/"
+      - text: "User guides"
+        link: "/"
+      - text: "Admin guide"
+        link: "/"
+      - text: "Developers"
+        link: "/"
+    column3:
+      title: "Blog"
+      links:
+      - text: "Latest news"
+        link: "/blog/first"
+      - text: "Tech articles"
+        link: /blog/second

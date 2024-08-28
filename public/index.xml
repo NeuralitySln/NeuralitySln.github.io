@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to Neurality Solutions on Neurality Solutions</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Welcome to Neurality Solutions on Neurality Solutions</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Us</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>About Neurality Solutions Neurality Solutions is at the forefront of developing advanced technologies for active noise cancellation in human-machine interfaces. Our team of experts is dedicated to creating innovative solutions that improve the quality and reliability of signal processing. With our patented technologies, we aim to revolutionize the industry and enhance user experiences.</description>
+    </item>
+    <item>
+      <title>Contact Us</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>Contact Neurality Solutions We would love to hear from you! Whether you have questions about our products, need support, or want to explore partnership opportunities, feel free to reach out to us at info@neurality.solutions.</description>
+    </item>
+  </channel>
+</rss>
