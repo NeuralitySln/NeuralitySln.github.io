@@ -4,6 +4,6 @@ title = "Neurality Solutions"
 theme = "hugo-fresh"
 
 [params]
-  description = "Active Noise Cancellation for Human-Machine Interface"
+  description = "Biosignal interface for immersive interactions"
   contactEmail = "info@neurality.solutions"
 
