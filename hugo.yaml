@@ -1,0 +1,53 @@
+baseURL: "/"
+languageCode: "en-us"
+title: "Neurality Solutions"
+theme: "hugo-scroll"
+
+# Handle raw HTML
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+# Theme parameters
+params:
+  # Color theme
+  color: "dark"
+  
+  # Header configuration
+  header:
+    title: "Neurality Solutions"
+    subtitle: "Active Noise Cancellation for Human-Machine Interface"
+    background: ""
+    text_color: "dark"
+
+  # Footer configuration
+  footer:
+    copyright: "© Neurality Solutions"
+
+  # Navigation
+  navigation:
+    links:
+      - text: "About"
+        target: "#about"
+      - text: "Technology"
+        target: "#technology"
+      - text: "Contact"
+        target: "#contact"
+
+# Ignore certain warning logs
+ignoreErrors: ['error-remote-getjson']
+ignoreLogs: ['warning-goldmark-raw-html']
+
+# Menu configuration
+menu:
+  main:
+    - name: "About"
+      url: "#about"
+      weight: 1
+    - name: "Technology"
+      url: "#technology"
+      weight: 2
+    - name: "Contact"
+      url: "#contact"
+      weight: 3
