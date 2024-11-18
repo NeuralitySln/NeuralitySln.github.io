@@ -4,7 +4,7 @@ header_menu: true
 weight: 2
 ---
 
-Our patented active noise cancellation technology revolutionizes human-machine interfaces by:
+We own the first and only active noise cancellation technology for human-machine interfaces. Our technology is capable of:
 
 - Reducing environmental noise interference
 - Enhancing signal clarity and accuracy
