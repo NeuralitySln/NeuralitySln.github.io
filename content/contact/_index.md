@@ -11,17 +11,8 @@ We're always excited to discuss partnerships, applications, and the future of hu
 
 ## Contact Information
 
-**General Information**  
+**General Information & All Inquiries**  
 Email: [info@neurality.solutions](mailto:info@neurality.solutions)
-
-**Partnership & Business Development**  
-Email: [partnerships@neurality.solutions](mailto:partnerships@neurality.solutions)
-
-**Investment & Funding**  
-Email: [investors@neurality.solutions](mailto:investors@neurality.solutions)
-
-**Media & Press**  
-Email: [press@neurality.solutions](mailto:press@neurality.solutions)
 
 ## Partnership Opportunities
 
@@ -56,6 +47,6 @@ For qualified investors interested in:
 
 ## Schedule a Meeting
 
-Ready to discuss how Neurality Solutions can accelerate your innovation? Contact us using the information above or through our partnership channels. We're excited to explore how we can work together to transform human-machine interaction.
+Ready to discuss how Neurality Solutions can accelerate your innovation? Contact us at [info@neurality.solutions](mailto:info@neurality.solutions). We're excited to explore how we can work together to transform human-machine interaction.
 
 **Accelerate Human Intent - Contact Neurality Solutions Today** 

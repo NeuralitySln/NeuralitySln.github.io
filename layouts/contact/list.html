@@ -1,0 +1,83 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <!-- Content from markdown file -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact form -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="row">
+        <div class="md:col-10 lg:col-6 mx-auto">
+          <div class="bg-light dark:bg-darkmode-light rounded-lg p-8">
+            <h3 class="mb-6 text-center">Send us a message</h3>
+            <form action="mailto:info@neurality.solutions" method="POST" enctype="text/plain">
+              <div class="mb-6">
+                <label for="name" class="form-label">
+                  Full Name <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Your full name"
+                  type="text"
+                  required />
+              </div>
+              <div class="mb-6">
+                <label for="email" class="form-label">
+                  Email Address <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="your.email@example.com"
+                  type="email"
+                  required />
+              </div>
+              <div class="mb-6">
+                <label for="subject" class="form-label">
+                  Subject <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="subject"
+                  name="subject"
+                  class="form-input"
+                  placeholder="Brief subject of your message"
+                  type="text"
+                  required />
+              </div>
+              <div class="mb-6">
+                <label for="message" class="form-label">
+                  Message <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-input"
+                  placeholder="Your message here..."
+                  rows="8"
+                  required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{{ end }} 
