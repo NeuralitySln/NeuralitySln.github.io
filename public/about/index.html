@@ -195,6 +195,9 @@
 
 
 
+  <script type="module">
+    import mermaid from "https:\/\/cdn.jsdelivr.net\/npm\/mermaid@latest\/dist\/mermaid.esm.min.mjs";
+  </script>
 
 
 
@@ -737,6 +740,23 @@
 <p>Neurality Solutions is at the forefront of biosignal interface technology, developing revolutionary systems that bridge the gap between human intent and digital interaction. Our mission is to <strong>accelerate human intent</strong> through breakthrough innovations in neural signal processing and noise cancellation.</p>
 <h2 id="our-vision">Our Vision</h2>
 <p>We envision a world where the barrier between thought and action is eliminated, where human intent is seamlessly translated into digital commands with unprecedented speed and precision.</p>
+<h2 id="technology-flow">Technology Flow</h2>
+<p>Our system processes biosignals through multiple stages to deliver ultra-low latency intent detection:</p>
+<pre class="mermaid">
+    graph TD
+	    A[Forearm Electrodes] --&gt; B[Signal Acquisition]
+	    B --&gt; C[Active Noise Cancellation]
+	    C --&gt; D[Intent Detection Algorithm]
+	    D --&gt; E[Machine Learning Classification]
+	    E --&gt; F[Digital Command Output]
+	    
+	    G[Environmental Noise] --&gt; C
+	    H[Movement Artifacts] --&gt; C
+	
+	    style A fill:#aaaaaa,stroke:#00E0FF,color:#ffffff
+	    style F fill:#00E0FF,stroke:#0A1B3D,color:#000000
+	    style D fill:#aaaaaa,stroke:#00E0FF,color:#ffffff
+</pre>
 <h2 id="founded-on-scientific-excellence">Founded on Scientific Excellence</h2>
 <p>Our team combines decades of research in computational neuroscience, signal processing, and human-computer interaction. We are committed to translating cutting-edge academic research into practical solutions that transform how humans interact with technology.</p>
 <h2 id="market-opportunity">Market Opportunity</h2>

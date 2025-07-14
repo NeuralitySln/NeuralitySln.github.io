@@ -26,6 +26,7 @@
       "p",
       "path",
       "polygon",
+      "pre",
       "script",
       "section",
       "span",
@@ -140,6 +141,7 @@
       "md:hidden",
       "md:order-1",
       "md:order-2",
+      "mermaid",
       "ml-auto",
       "mr-1",
       "mr-5",
@@ -233,6 +235,7 @@
       "pioneering-the-future-of-human-machine-interfaces",
       "search-modal-input",
       "show-button",
+      "technology-flow",
       "theme-switcher"
     ]
   }

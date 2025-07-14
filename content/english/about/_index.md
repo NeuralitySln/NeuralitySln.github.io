@@ -14,6 +14,26 @@ Neurality Solutions is at the forefront of biosignal interface technology, devel
 
 We envision a world where the barrier between thought and action is eliminated, where human intent is seamlessly translated into digital commands with unprecedented speed and precision.
 
+## Technology Flow
+
+Our system processes biosignals through multiple stages to deliver ultra-low latency intent detection:
+
+```mermaid
+graph TD
+    A[Forearm Electrodes] --> B[Signal Acquisition]
+    B --> C[Active Noise Cancellation]
+    C --> D[Intent Detection Algorithm]
+    D --> E[Machine Learning Classification]
+    E --> F[Digital Command Output]
+    
+    G[Environmental Noise] --> C
+    H[Movement Artifacts] --> C
+
+    style A fill:#aaaaaa,stroke:#00E0FF,color:#ffffff
+    style F fill:#00E0FF,stroke:#0A1B3D,color:#000000
+    style D fill:#aaaaaa,stroke:#00E0FF,color:#ffffff
+```
+
 ## Founded on Scientific Excellence
 
 Our team combines decades of research in computational neuroscience, signal processing, and human-computer interaction. We are committed to translating cutting-edge academic research into practical solutions that transform how humans interact with technology.
