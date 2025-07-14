@@ -17,23 +17,39 @@ params:
   # Header configuration
   header:
     title: "Neurality Solutions"
-    subtitle: "Active Noise Cancellation for Human-Machine Interface"
+    subtitle: "Accelerate Human Intent"
     background: ""
     text_color: "dark"
+    logo: "neurality-logo.png"
 
   # Footer configuration
   footer:
-    copyright: "© Neurality Solutions"
+    copyright: "© 2024 Neurality Solutions"
 
   # Navigation
   navigation:
     links:
-      - text: "About"
-        target: "#about"
       - text: "Technology"
         target: "#technology"
+      - text: "Science"
+        target: "#science"
+      - text: "Applications"
+        target: "#applications"
+      - text: "About"
+        target: "#about"
+      - text: "Investors"
+        target: "#investors"
       - text: "Contact"
         target: "#contact"
+
+  # Brand colors from ns-assets
+  brand:
+    primary: "#0A1B3D"      # Deep Navy
+    accent: "#00E0FF"       # Electric Cyan
+    secondary: "#8A94A4"    # Soft Slate
+    background: "#F9FAFB"   # Snow White
+    alert: "#FF4B5C"        # Signal Red
+    dark_bg: "#0A0A12"      # Midnight Black
 
 # Ignore certain warning logs
 ignoreErrors: ['error-remote-getjson']
@@ -42,12 +58,21 @@ ignoreLogs: ['warning-goldmark-raw-html']
 # Menu configuration
 menu:
   main:
-    - name: "About"
-      url: "#about"
-      weight: 1
     - name: "Technology"
       url: "#technology"
+      weight: 1
+    - name: "Science"
+      url: "#science"
       weight: 2
+    - name: "Applications"
+      url: "#applications"
+      weight: 3
+    - name: "About"
+      url: "#about"
+      weight: 4
+    - name: "Investors"
+      url: "#investors"
+      weight: 5
     - name: "Contact"
       url: "#contact"
-      weight: 3
+      weight: 6
