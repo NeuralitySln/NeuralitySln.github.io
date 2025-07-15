@@ -1,0 +1,9 @@
+{{- if .Site.Params.mermaid.js_url -}}
+<script type="module">
+  import mermaid from '{{ .Site.Params.mermaid.js_url }}';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default'
+  });
+</script>
+{{- end -}} 

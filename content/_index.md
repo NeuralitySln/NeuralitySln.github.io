@@ -1,5 +1,10 @@
 ---
-header_image: ""
-header_headline: "Neurality Solutions"
-header_subheadline: "Low-latency interfaces for spatial computing"
+# Banner
+banner:
+  title: "Stay Tuned"
+  content: "_Accelerate Human Intent_"
+  button:
+    enable: true
+    label: "Contact Us"
+    link: "/contact"
 ---
