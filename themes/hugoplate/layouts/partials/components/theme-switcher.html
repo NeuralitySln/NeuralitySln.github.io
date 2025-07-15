@@ -35,22 +35,70 @@
 
   <!-- theme switcher -->
   <script>
-    var darkMode = localStorage.getItem("theme") === "dark";
-
-    if (localStorage.getItem("theme") === null) {
-      darkMode = {{if eq site.Params.theme_default "dark"}}true{{else}}false{{end}};
-
-      {{ if eq site.Params.theme_default "system" }}
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        darkMode = true;
-      }
-      {{ end }}
+    // Enhanced theme switcher with proper system preference support
+    function getSystemPreference() {
+      return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
 
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    function calculateCurrentTheme() {
+      const storedTheme = localStorage.getItem("theme");
+      
+      // If no stored preference, use system default
+      if (!storedTheme) {
+        return getSystemPreference() ? "dark" : "light";
+      }
+      
+      // If stored as "system", follow system preference
+      if (storedTheme === "system") {
+        return getSystemPreference() ? "dark" : "light";
+      }
+      
+      // Otherwise use stored preference
+      return storedTheme;
+    }
+
+    function applyTheme(theme) {
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+
+    function cycleTheme() {
+      const currentStored = localStorage.getItem("theme") || "system";
+      let nextTheme;
+      
+      // Cycle through: system → light → dark → system
+      switch(currentStored) {
+        case "system":
+          nextTheme = "light";
+          break;
+        case "light":
+          nextTheme = "dark";
+          break;
+        case "dark":
+          nextTheme = "system";
+          break;
+        default:
+          nextTheme = "system";
+      }
+      
+      localStorage.setItem("theme", nextTheme);
+      applyTheme(calculateCurrentTheme());
+    }
+
+    // Initialize theme on page load
+    applyTheme(calculateCurrentTheme());
+
+    // Listen for system preference changes
+    if (window.matchMedia) {
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+        // Only update if currently following system preference
+        if (!localStorage.getItem("theme") || localStorage.getItem("theme") === "system") {
+          applyTheme(calculateCurrentTheme());
+        }
+      });
     }
 
     // Show theme switcher after applying theme
@@ -59,13 +107,13 @@
       var themeSwitcherContainer = document.querySelector('.theme-switcher');
 
       [].forEach.call(themeSwitch, function (ts) {
-        ts.checked = darkMode;
+        // Set initial checkbox state
+        ts.checked = calculateCurrentTheme() === "dark";
+        
         ts.addEventListener("click", () => {
-          document.documentElement.classList.toggle("dark");
-          localStorage.setItem(
-            "theme",
-            document.documentElement.classList.contains("dark") ? "dark" : "light"
-          );
+          cycleTheme();
+          // Update checkbox state
+          ts.checked = calculateCurrentTheme() === "dark";
         });
       });
 
