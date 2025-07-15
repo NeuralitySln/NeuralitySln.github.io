@@ -28,7 +28,7 @@ shortname = 'neurality-solutions' # we use disqus to show comments in blog posts
 
 ########################## Permalinks ############################
 [permalinks]
-page = "/:slugorcontentbasename/"
+page = "/:slug/"
 
 
 ########################## Pagination ############################
