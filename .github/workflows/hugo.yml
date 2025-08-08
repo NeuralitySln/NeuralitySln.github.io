@@ -31,7 +31,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.141.0
+      HUGO_VERSION: 0.147.9
     steps:
       - name: Install Hugo CLI
         run: |
@@ -68,7 +68,7 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "https://neurality.solutions/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
