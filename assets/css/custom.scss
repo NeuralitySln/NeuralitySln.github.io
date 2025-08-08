@@ -21,7 +21,48 @@ body {
   background-color: var(--ns-background);
 }
 
-// Header Styling
+// Banner Section with Soft Gradient Background
+.section:first-child {
+  background: linear-gradient(135deg, 
+    rgba(249, 250, 251, 0.95) 0%, 
+    rgba(240, 245, 251, 0.9) 25%,
+    rgba(230, 240, 250, 0.85) 50%,
+    rgba(220, 235, 250, 0.8) 75%,
+    rgba(210, 230, 250, 0.75) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  
+  h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--ns-primary);
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--ns-text-dark);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+  }
+  
+  .banner-image {
+    opacity: 0.8;
+    filter: drop-shadow(0 20px 40px rgba(10, 27, 61, 0.15));
+    transition: all 0.3s ease;
+    
+    &:hover {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+  }
+}
+
+// Header Styling (for other pages)
 .header {
   background: linear-gradient(135deg, var(--ns-primary) 0%, var(--ns-dark-bg) 100%);
   color: var(--ns-text-light);
@@ -75,7 +116,17 @@ body {
   padding: 4rem 0;
   
   &:nth-child(even) {
-    background-color: rgba(248, 250, 252, 0.5);
+    background: linear-gradient(135deg, 
+      rgba(248, 250, 252, 0.6) 0%, 
+      rgba(240, 245, 252, 0.4) 50%, 
+      rgba(235, 242, 250, 0.3) 100%);
+  }
+  
+  &:nth-child(odd):not(:first-child) {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.8) 0%, 
+      rgba(250, 252, 255, 0.6) 50%, 
+      rgba(245, 250, 255, 0.4) 100%);
   }
   
   h2 {
@@ -83,20 +134,8 @@ body {
     font-weight: 700;
     color: var(--ns-primary);
     margin-bottom: 2rem;
-    text-align: center;
+    text-align: left;
     position: relative;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--ns-accent), var(--ns-primary));
-      border-radius: 2px;
-    }
   }
   
   h3 {
@@ -111,6 +150,50 @@ body {
     font-weight: 600;
     color: var(--ns-secondary);
     margin: 1.5rem 0 0.8rem 0;
+  }
+  
+  // Feature images styling
+  img {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(10, 27, 61, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(10, 27, 61, 0.15);
+    }
+  }
+  
+  // Feature content styling
+  .feature-content {
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--ns-text-dark);
+      margin-bottom: 2rem;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        
+        &::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: var(--ns-accent);
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 }
 
