@@ -153,8 +153,8 @@
          /* Hero Banner Styling */
      .hero-banner {
        min-height: 100vh;
-       background-size: 140% auto;
-       background-position: center;
+       background-size: 110% auto;
+       background-position: right center;
        background-attachment: fixed;
        position: relative;
        display: flex;
@@ -395,7 +395,8 @@
          @media (max-width: 768px) {
        .hero-banner {
          background-attachment: scroll;
-         background-size: 180% auto;
+         background-size: 130% auto;
+         background-position: 60% center;
          min-height: 80vh;
        }
       
@@ -434,41 +435,67 @@
       }
     }
     
-    /* Dark Mode Specific Enhancements */
-    @media (prefers-color-scheme: dark) {
-      .hero-overlay {
-        background: linear-gradient(
-          135deg, 
-          rgba(10, 27, 61, 0.9) 0%, 
-          rgba(0, 0, 0, 0.5) 50%, 
-          rgba(10, 27, 61, 0.8) 100%
-        );
-      }
-      
-      .gallery-item {
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      }
-      
-      .feature-card {
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-    }
+         /* Dark Mode Specific Enhancements */
+     @media (prefers-color-scheme: dark) {
+       .hero-overlay {
+         background: linear-gradient(
+           135deg, 
+           rgba(10, 27, 61, 0.9) 0%, 
+           rgba(0, 0, 0, 0.5) 50%, 
+           rgba(10, 27, 61, 0.8) 100%
+         );
+       }
+       
+       .gallery-section {
+         background: linear-gradient(135deg, 
+           rgba(20, 26, 38, 0.95) 0%, 
+           rgba(26, 32, 44, 0.9) 50%, 
+           rgba(15, 23, 35, 0.85) 100%);
+       }
+       
+       .gallery-item {
+         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+         border: 1px solid rgba(0, 224, 255, 0.1);
+       }
+       
+       .gallery-item:hover {
+         box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+         border: 1px solid rgba(0, 224, 255, 0.3);
+       }
+       
+       .feature-card {
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+       }
+     }
     
-    [data-theme="dark"] .hero-overlay {
-      background: linear-gradient(
-        135deg, 
-        rgba(10, 27, 61, 0.9) 0%, 
-        rgba(0, 0, 0, 0.5) 50%, 
-        rgba(10, 27, 61, 0.8) 100%
-      );
-    }
-    
-    [data-theme="dark"] .gallery-item {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-    
-    [data-theme="dark"] .feature-card {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
+         [data-theme="dark"] .hero-overlay {
+       background: linear-gradient(
+         135deg, 
+         rgba(10, 27, 61, 0.9) 0%, 
+         rgba(0, 0, 0, 0.5) 50%, 
+         rgba(10, 27, 61, 0.8) 100%
+       );
+     }
+     
+     [data-theme="dark"] .gallery-section {
+       background: linear-gradient(135deg, 
+         rgba(20, 26, 38, 0.95) 0%, 
+         rgba(26, 32, 44, 0.9) 50%, 
+         rgba(15, 23, 35, 0.85) 100%);
+     }
+     
+     [data-theme="dark"] .gallery-item {
+       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+       border: 1px solid rgba(0, 224, 255, 0.1);
+     }
+     
+     [data-theme="dark"] .gallery-item:hover {
+       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+       border: 1px solid rgba(0, 224, 255, 0.3);
+     }
+     
+     [data-theme="dark"] .feature-card {
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+     }
   </style>
 {{ end }}
