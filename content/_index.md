@@ -9,6 +9,11 @@ banner:
     label: "Contact Us"
     link: "/contact"
 
+# Gallery Section
+gallery_section:
+  title: "Our Technology"
+  content: "Explore our innovative approach to muscle signal processing and wearable technology."
+
 # Features
 features:
   - title: "Intuitive Muscle Control"
@@ -18,8 +23,6 @@ features:
       - "Real-time muscle signal processing"
       - "Machine learning-enabled gesture recognition"
       - "Wireless connectivity for seamless integration"
-    button:
-      enable: false
 
   - title: "Smart Signal Processing"
     image: "images/signal-processing.jpg"
@@ -28,8 +31,6 @@ features:
       - "AI-powered signal interpretation"
       - "Adaptive learning for personalized control"
       - "Low-latency response for natural interaction"
-    button:
-      enable: false
 
   - title: "Geodesic Sensor Network"
     image: "images/Fig1-high-meso-geo.png"
@@ -38,6 +39,4 @@ features:
       - "Optimized electrode positioning"
       - "High-density sensor arrays"
       - "Robust signal acquisition"
-    button:
-      enable: false
 ---
