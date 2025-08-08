@@ -10,9 +10,9 @@ banner:
     link: "/contact"
 
 # Gallery Section
-gallery_section:
-  title: "Our Technology"
-  content: "Explore our innovative approach to muscle signal processing and wearable technology."
+# gallery_section:
+#   title: "Our Technology"
+#   content: "Explore our innovative approach to muscle signal processing and wearable technology."
 
 # Features
 features:
