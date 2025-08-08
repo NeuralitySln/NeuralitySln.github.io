@@ -372,6 +372,21 @@ ul {
   }
 }
 
+// Transparent Header Override - Highest Priority
+.transparent-header,
+.transparent-header.header,
+header.transparent-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  --tw-bg-opacity: 0 !important;
+  
+  .navbar,
+  .container {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+}
+
 // Mobile Responsive
 @media (max-width: 768px) {
   .header h1 {

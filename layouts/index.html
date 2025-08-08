@@ -160,17 +160,29 @@
        color: var(--ns-text-dark);
      }
     
-         /* Hero Banner Styling */
-     .hero-banner {
-       min-height: 100vh;
-       background-size: 110% auto;
-       background-position: right center;
-       background-repeat: no-repeat;
-       background-attachment: fixed;
-       position: relative;
-       display: flex;
-       align-items: center;
-     }
+             /* Force page body to have no white space at top */
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    /* Hero Banner Styling */
+    .hero-banner {
+      min-height: 100vh;
+      background-size: 110% auto;
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+      display: flex;
+      align-items: center;
+      /* Extend to cover header area completely */
+      margin-top: -150px;
+      padding-top: 150px;
+      /* Ensure it covers full viewport */
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
     
     .hero-overlay {
       position: absolute;

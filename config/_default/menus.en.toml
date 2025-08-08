@@ -1,15 +1,9 @@
 ############# English navigation ##############
 
 # main menu
-[[main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[main]]
-name = "Contact"
-url = "/contact"
-weight = 2
+# Removed Home and Contact from main menu since:
+# - Logo click returns to home
+# - Contact button available in header
 
 # footer menu
 [[footer]]

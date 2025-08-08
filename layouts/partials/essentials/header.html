@@ -1,0 +1,343 @@
+<header
+  class="header {{ if .IsHome }}transparent-header{{ else }}regular-header{{ end }} {{ if site.Params.navbar_fixed }}sticky top-0{{ end }} z-30">
+  <nav class="navbar container">
+    <!-- logo -->
+    <div class="order-0">
+      <!-- navbar brand/logo -->
+      <a class="navbar-brand block" href="{{ site.Home.RelPermalink }}">
+        {{ if .IsHome }}
+          <!-- Always use dark logo on home page (transparent header) -->
+          {{ if site.Params.logo_darkmode }}
+            <img
+              class="mx-auto"
+              width="{{ site.Params.logo_width | default `100px` }}"
+              height="{{ site.Params.logo_height | default `30px` }}"
+              src="{{ site.Params.logo_darkmode | absURL }}"
+              alt="{{ site.Params.logo_text | default site.Title }}"
+            />
+          {{ else if site.Params.logo }}
+            <img
+              class="mx-auto"
+              width="{{ site.Params.logo_width | default `100px` }}"
+              height="{{ site.Params.logo_height | default `30px` }}"
+              src="{{ site.Params.logo | absURL }}"
+              alt="{{ site.Params.logo_text | default site.Title }}"
+            />
+          {{ else }}
+            <span class="text-white font-bold">{{ site.Params.logo_text | default site.Title }}</span>
+          {{ end }}
+        {{ else }}
+          <!-- Theme-aware logo for other pages -->
+          {{ if site.Params.logo }}
+            <img
+              class="mx-auto light-logo"
+              width="{{ site.Params.logo_width | default `100px` }}"
+              height="{{ site.Params.logo_height | default `30px` }}"
+              src="{{ site.Params.logo | absURL }}"
+              alt="{{ site.Params.logo_text | default site.Title }}"
+            />
+          {{ end }}
+          {{ if site.Params.logo_darkmode }}
+            <img
+              class="mx-auto dark-logo"
+              width="{{ site.Params.logo_width | default `100px` }}"
+              height="{{ site.Params.logo_height | default `30px` }}"
+              src="{{ site.Params.logo_darkmode | absURL }}"
+              alt="{{ site.Params.logo_text | default site.Title }}"
+            />
+          {{ end }}
+          {{ if not (or site.Params.logo site.Params.logo_darkmode) }}
+            <span class="font-bold">{{ site.Params.logo_text | default site.Title }}</span>
+          {{ end }}
+        {{ end }}
+      </a>
+    </div>
+    <!-- navbar toggler -->
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden {{ if .IsHome }}text-white{{ else }}text-text-dark dark:text-white{{ end }} lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    <!-- /navbar toggler -->
+
+    <!-- main navbar -->
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      {{ $currentPage := . }}
+      {{ range site.Menus.main }}
+        {{ $menuURL := .URL | absLangURL }}
+        {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+        {{ $active := eq $menuURL $pageURL }}
+        {{ if .HasChildren }}
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link {{ range .Children }}
+                {{ $childURL := .URL | absLangURL }}
+                {{ $active := eq $childURL $pageURL }}
+                {{ if $active }}active{{ end }}
+              {{ end }} inline-flex items-center {{ if $.IsHome }}text-white hover:text-cyan-300{{ else }}text-text-dark dark:text-white hover:text-primary dark:hover:text-darkmode-primary{{ end }}">
+              {{ .Name }}
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              {{ range .Children }}
+                {{ $childURL := .URL | absLangURL }}
+                {{ $active := eq $childURL $pageURL }}
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link {{ if $active }}
+                      active
+                    {{- end -}}"
+                    {{ if findRE `^http` .URL }}
+                      target="_blank" rel="noopener"
+                    {{ end }}
+                    href="{{- if findRE `^#` .URL -}}
+                      {{- if not $.IsHome -}}
+                        {{- site.Home.RelPermalink -}}
+                      {{- end -}}
+                      {{- .URL -}}
+                    {{- else -}}
+                      {{- .URL | relLangURL -}}
+                    {{- end -}}">
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          </li>
+        {{ else }}
+          <li class="nav-item">
+            <a
+              class="nav-link {{ if $active }}active{{- end -}} {{ if $.IsHome }}text-white hover:text-cyan-300{{ else }}text-text-dark dark:text-white hover:text-primary dark:hover:text-darkmode-primary{{ end }}"
+              {{ if findRE `^http` .URL }}
+                target="_blank" rel="noopener"
+              {{ end }}
+              href="{{- if findRE `^#` .URL -}}
+                {{- if not $.IsHome -}}
+                  {{- site.Home.RelPermalink -}}
+                {{- end }}{{- .URL -}}
+              {{- else -}}
+                {{- .URL | relLangURL -}}
+              {{- end -}}"
+              >{{ .Name }}</a
+            >
+          </li>
+        {{ end }}
+      {{ end }}
+      {{ if site.Params.navigation_button.enable }}
+        <li class="mt-4 inline-block lg:hidden">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="{{ site.Params.navigation_button.link | relLangURL }}">
+            {{ site.Params.navigation_button.label }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      {{ with site.Params.search }}
+        {{ if .enable }}
+          <button
+            aria-label="search"
+            class="{{ if .IsHome }}text-white hover:text-cyan-300 border-white/20{{ else }}text-text-dark dark:text-white hover:text-primary dark:hover:text-darkmode-primary border-border dark:border-darkmode-border{{ end }}
+            mr-5 inline-block border-r pr-5
+            text-xl cursor-pointer
+            {{ if not (or site.Params.navigation_button.enable site.Params.theme_switcher) }}
+              lg:border-r-0 lg:pr-0
+            {{ end }}"
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        {{ end }}
+      {{ end }}
+
+      {{ if .IsHome }}
+        {{ partial "components/language-switcher" (dict "Context" . "Class" "mr-5 pl-2 py-1 bg-white/10 rounded text-white") }}
+      {{ else }}
+        {{ partial "components/language-switcher" (dict "Context" . "Class" "mr-5 pl-2 py-1 dark:bg-darkmode-light rounded") }}
+      {{ end }}
+      {{ partial "components/theme-switcher" (dict "Class" "mr-5") }}
+
+      <!-- navigation btn -->
+      {{ if site.Params.navigation_button.enable }}
+        <a
+          href="{{ site.Params.navigation_button.link | relLangURL }}"
+          class="btn btn-outline-primary btn-sm hidden lg:inline-block {{ if .IsHome }}bg-cyan-500 hover:bg-cyan-600 text-white border-cyan-500 hover:border-cyan-600{{ else }}bg-primary hover:bg-primary/90 text-white border-primary hover:border-primary/90{{ end }}">
+          {{ site.Params.navigation_button.label }}
+        </a>
+      {{ end }}
+    </div>
+  </nav>
+</header>
+
+<style>
+/* Ultra-specific transparent header overrides */
+body .transparent-header,
+body .transparent-header.header,
+body header.transparent-header,
+.transparent-header,
+.transparent-header.header,
+header.transparent-header {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+/* Override ALL possible background properties */
+.transparent-header {
+  --tw-bg-opacity: 0 !important;
+  --bg-opacity: 0 !important;
+}
+
+/* Ensure child elements are also transparent */
+.transparent-header *,
+.transparent-header .navbar,
+.transparent-header .container,
+.transparent-header .navbar-brand,
+.transparent-header .order-0,
+.transparent-header .order-1 {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Set proper spacing */
+.transparent-header {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  margin: 0 !important;
+}
+
+/* Regular header styling for other pages */
+.regular-header {
+  background: rgb(249, 250, 251) !important;
+}
+
+.dark .regular-header {
+  background: rgb(10, 10, 18) !important;
+}
+
+.regular-header .navbar {
+  background: transparent !important;
+}
+
+/* Text colors for different header types */
+.regular-header .nav-link,
+.regular-header .navbar-brand,
+.regular-header button[data-target="search-modal"] {
+  color: #2D3748;
+}
+
+.dark .regular-header .nav-link,
+.dark .regular-header .navbar-brand,
+.dark .regular-header button[data-target="search-modal"] {
+  color: #E2E8F0;
+}
+
+.regular-header .nav-link:hover,
+.regular-header button[data-target="search-modal"]:hover {
+  color: #0A1B3D;
+}
+
+.dark .regular-header .nav-link:hover,
+.dark .regular-header button[data-target="search-modal"]:hover {
+  color: #00E0FF;
+}
+
+/* Logo visibility for theme switching on non-home pages */
+.regular-header .light-logo {
+  display: block;
+}
+
+.regular-header .dark-logo {
+  display: none;
+}
+
+.dark .regular-header .light-logo {
+  display: none;
+}
+
+.dark .regular-header .dark-logo {
+  display: block;
+}
+
+/* Dark/Light theme toggle button styling for transparent header */
+.transparent-header .theme-switcher label {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.transparent-header .theme-switcher span {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the switch toggle is always visible on transparent header */
+.transparent-header .theme-switcher input:checked + label span {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Add hover effects for better visibility */
+.transparent-header .theme-switcher:hover label {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.transparent-header .theme-switcher:hover span {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Language switcher styling for transparent header */
+.transparent-header .language-switcher {
+  color: white;
+}
+
+/* Dropdown menu styling for transparent header */
+.transparent-header .nav-dropdown-list {
+  background: rgba(10, 27, 61, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.transparent-header .nav-dropdown-link {
+  color: white;
+}
+
+.transparent-header .nav-dropdown-link:hover {
+  color: #00E0FF;
+}
+
+/* Mobile menu styling */
+@media (max-width: 1024px) {
+  .transparent-header #nav-menu {
+    background: rgba(10, 27, 61, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+}
+</style>
