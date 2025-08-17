@@ -6,6 +6,7 @@ import { ArrowRight, Brain, Zap, Target, Play } from "lucide-react";
 import { motion } from "framer-motion";
 import TypedText from "@/components/TypedText";
 import ImageModal from "@/components/ImageModal";
+import Link from "next/link";
 
 export default function Home() {
   const [modalState, setModalState] = useState<{
@@ -220,22 +221,26 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.0 }}
               >
-                <motion.button 
-                  className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/25"
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Play size={20} className="group-hover:scale-110 transition-transform" fill="currentColor" />
-                  Watch Demo
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </motion.button>
-                <motion.button 
-                  className="inline-flex items-center gap-2 text-primary border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 hover:border-accent/30 transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Explore Technology
-                </motion.button>
+                <Link href="/watch-demo" passHref legacyBehavior>
+                  <motion.a
+                    className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/25 cursor-pointer"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Play size={20} className="group-hover:scale-110 transition-transform" fill="currentColor" />
+                    Watch Demo
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </motion.a>
+                </Link>
+                <Link href="/explore-technology" passHref legacyBehavior>
+                  <motion.a
+                    className="inline-flex items-center gap-2 text-primary border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 hover:border-accent/30 transition-all duration-300 cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Explore Technology
+                  </motion.a>
+                </Link>
               </motion.div>
 
               {/* Stats */}
@@ -416,15 +421,17 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <motion.button 
-              className="group inline-flex items-center gap-4 bg-gradient-to-r from-primary to-accent text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Play size={24} fill="currentColor" className="group-hover:scale-110 transition-transform" />
-              Experience the Technology
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            <Link href="/experience-technology" passHref legacyBehavior>
+              <motion.button 
+                className="group inline-flex items-center gap-4 bg-gradient-to-r from-primary to-accent text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Play size={24} fill="currentColor" className="group-hover:scale-110 transition-transform" />
+                Experience the Technology
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>
