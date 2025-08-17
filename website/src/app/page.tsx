@@ -326,203 +326,86 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-20">
-            {/* Feature 1 */}
-            <motion.div 
-              className="group relative p-8 rounded-3xl border border-gray-100 hover:border-accent/20 hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-            >
-              <div className="mb-8">
-                <motion.div 
-                  className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
-                  whileHover={{ rotate: 5 }}
-                >
-                  <Brain className="w-8 h-8 text-primary" />
-                </motion.div>
-                <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">
-                  Intuitive Muscle Control
-                </h3>
-                <p className="text-lg text-secondary leading-relaxed mb-6">
-                  Revolutionary EMG sensors capture muscle signals with unprecedented precision, 
-                  enabling natural control that feels like an extension of your body.
-                </p>
-              </div>
-              
-              <div className="space-y-3">
-                {[
-                  "< 5ms real-time processing",
-                  "ML-powered gesture recognition",
-                  "Seamless wireless integration"
-                ].map((feature, idx) => (
-                  <motion.div 
-                    key={idx}
-                    className="flex items-center gap-3 text-sm font-medium text-secondary"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full"></div>
-                    {feature}
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="absolute top-6 right-6 group/image">
-                <div 
-                  className="relative cursor-pointer"
-                  onClick={() => openModal(0)}
-                >
+            {techCards.map((card, idx) => (
+              <motion.div
+                key={card.title}
+                className="group relative rounded-3xl border border-gray-100 hover:border-accent/20 hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm overflow-hidden flex flex-col min-h-[480px]"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 * (idx + 1) }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+              >
+                {/* Large, blended image */}
+                <div className="relative w-full h-48 md:h-56 lg:h-64 flex-shrink-0">
                   <Image
-                    src="/assets/distributed-recording.jpg"
-                    alt="Distributed EMG recording setup showing multiple electrode placement"
-                    width={100}
-                    height={75}
-                    className="rounded-xl opacity-30 group-hover:opacity-70 group-hover/image:opacity-100 transition-all duration-300 cursor-pointer hover:scale-110"
+                    src={card.imageSrc}
+                    alt={card.imageAlt}
+                    fill
+                    className="object-cover object-center w-full h-full scale-110 group-hover:scale-125 transition-transform duration-500"
+                    style={{ zIndex: 1 }}
+                    onClick={() => openModal(idx)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`View more about ${card.title}`}
+                    onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && openModal(idx)}
                   />
-                  <div className="absolute inset-0 bg-accent/20 rounded-xl opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-xs font-medium text-white bg-primary/80 px-2 py-1 rounded">
-                      View Setup
-                    </span>
-                  </div>
+                  {/* Soft gradient overlay for blending */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-transparent pointer-events-none" style={{ zIndex: 2 }} />
                 </div>
-              </div>
-            </motion.div>
 
-            {/* Feature 2 */}
-            <motion.div 
-              className="group relative p-8 rounded-3xl border border-gray-100 hover:border-accent/20 hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-            >
-              <div className="mb-8">
-                <motion.div 
-                  className="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
-                  whileHover={{ rotate: -5 }}
-                >
-                  <Zap className="w-8 h-8 text-accent" />
-                </motion.div>
-                <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">
-                  Smart Signal Processing
-                </h3>
-                <p className="text-lg text-secondary leading-relaxed mb-6">
-                  AI algorithms decode complex bioelectric patterns to understand intent, 
-                  not just movement—delivering control that anticipates your needs.
-                </p>
-              </div>
-              
-              <div className="space-y-3">
-                {[
-                  "98.7% gesture accuracy",
-                  "Adaptive learning algorithms", 
-                  "Intent-based control logic"
-                ].map((feature, idx) => (
-                  <motion.div 
-                    key={idx}
-                    className="flex items-center gap-3 text-sm font-medium text-secondary"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.4 + idx * 0.1 }}
-                    viewport={{ once: true }}
+                {/* Card content overlays image on desktop, stacks below on mobile */}
+                <div className="relative z-10 flex-1 flex flex-col justify-between p-8 pt-6 md:-mt-12">
+                  <div>
+                    <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">
+                      {card.title}
+                    </h3>
+                    <p className="text-lg text-secondary leading-relaxed mb-6">
+                      {card.description.split('. ')[0]}.
+                    </p>
+                    <div className="space-y-3 mb-6">
+                      {idx === 0 && [
+                        "< 5ms real-time processing",
+                        "ML-powered gesture recognition",
+                        "Seamless wireless integration"
+                      ].map((feature, i) => (
+                        <div key={i} className="flex items-center gap-3 text-sm font-medium text-secondary">
+                          <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full"></div>
+                          {feature}
+                        </div>
+                      ))}
+                      {idx === 1 && [
+                        "98.7% gesture accuracy",
+                        "Adaptive learning algorithms",
+                        "Intent-based control logic"
+                      ].map((feature, i) => (
+                        <div key={i} className="flex items-center gap-3 text-sm font-medium text-secondary">
+                          <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full"></div>
+                          {feature}
+                        </div>
+                      ))}
+                      {idx === 2 && [
+                        "High-density sensor arrays",
+                        "Optimized electrode placement",
+                        "Superior signal-to-noise ratio"
+                      ].map((feature, i) => (
+                        <div key={i} className="flex items-center gap-3 text-sm font-medium text-secondary">
+                          <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full"></div>
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <button
+                    className="mt-4 bg-accent text-primary px-6 py-3 rounded-lg font-semibold shadow hover:bg-accent/90 transition-colors text-base focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+                    onClick={() => openModal(idx)}
+                    aria-label={`Learn more about ${card.title}`}
                   >
-                    <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full"></div>
-                    {feature}
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="absolute top-6 right-6 group/image">
-                <div 
-                  className="relative cursor-pointer"
-                  onClick={() => openModal(1)}
-                >
-                  <Image
-                    src="/assets/signal-processing.jpg"
-                    alt="Real-time signal processing algorithms visualizing muscle activity patterns"
-                    width={100}
-                    height={75}
-                    className="rounded-xl opacity-30 group-hover:opacity-70 group-hover/image:opacity-100 transition-all duration-300 cursor-pointer hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-accent/20 rounded-xl opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-xs font-medium text-white bg-accent/80 px-2 py-1 rounded">
-                      Live Demo
-                    </span>
-                  </div>
+                    Learn More
+                  </button>
                 </div>
-              </div>
-            </motion.div>
-
-            {/* Feature 3 */}
-            <motion.div 
-              className="group relative p-8 rounded-3xl border border-gray-100 hover:border-accent/20 hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-            >
-              <div className="mb-8">
-                <motion.div 
-                  className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
-                  whileHover={{ rotate: 5 }}
-                >
-                  <Target className="w-8 h-8 text-secondary" />
-                </motion.div>
-                <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">
-                  Geodesic Sensor Network
-                </h3>
-                <p className="text-lg text-secondary leading-relaxed mb-6">
-                  Proprietary electrode architecture provides comprehensive muscle coverage 
-                  with unmatched signal fidelity and comfort during extended use.
-                </p>
-              </div>
-              
-              <div className="space-y-3">
-                {[
-                  "High-density sensor arrays",
-                  "Optimized electrode placement",
-                  "Superior signal-to-noise ratio"
-                ].map((feature, idx) => (
-                  <motion.div 
-                    key={idx}
-                    className="flex items-center gap-3 text-sm font-medium text-secondary"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.5 + idx * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full"></div>
-                    {feature}
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="absolute top-6 right-6 group/image">
-                <div 
-                  className="relative cursor-pointer"
-                  onClick={() => openModal(2)}
-                >
-                  <Image
-                    src="/assets/Fig1-high-meso-geo.png"
-                    alt="Geodesic electrode array showing high-density and meso-density sensor placement patterns"
-                    width={100}
-                    height={75}
-                    className="rounded-xl opacity-30 group-hover:opacity-70 group-hover/image:opacity-100 transition-all duration-300 cursor-pointer hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-accent/20 rounded-xl opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-xs font-medium text-white bg-secondary/80 px-2 py-1 rounded">
-                      Patent Tech
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
 
           {/* Technology Demo Section */}
