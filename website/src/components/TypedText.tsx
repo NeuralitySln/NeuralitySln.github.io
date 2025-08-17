@@ -21,10 +21,14 @@ export default function TypedText({
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [fadeInIdx, setFadeInIdx] = useState(-1); // for fade-in effect
 
   useEffect(() => {
     const currentText = texts[textIndex];
-    
+    let interval = isDeleting ? deleteSpeed : speed;
+    // Add slight randomization for more natural typing
+    interval += Math.floor(Math.random() * 40);
+
     if (isPaused) {
       const pauseTimer = setTimeout(() => {
         setIsPaused(false);
@@ -38,6 +42,7 @@ export default function TypedText({
         // Typing
         if (displayText.length < currentText.length) {
           setDisplayText(currentText.slice(0, displayText.length + 1));
+          setFadeInIdx(displayText.length); // trigger fade-in for new char
         } else {
           setIsPaused(true);
         }
@@ -50,15 +55,58 @@ export default function TypedText({
           setTextIndex((prev) => (prev + 1) % texts.length);
         }
       }
-    }, isDeleting ? deleteSpeed : speed);
+    }, interval);
 
     return () => clearTimeout(timer);
   }, [displayText, textIndex, isDeleting, isPaused, texts, speed, deleteSpeed, pauseTime]);
 
+  // Reset fade-in index after animation
+  useEffect(() => {
+    if (fadeInIdx !== -1) {
+      const fadeTimer = setTimeout(() => setFadeInIdx(-1), 180);
+      return () => clearTimeout(fadeTimer);
+    }
+  }, [fadeInIdx]);
+
   return (
-    <span className={`${className} inline-block`}>
-      <span>{displayText}</span>
-      <span className="animate-pulse text-accent text-base font-thin ml-1">|</span>
+    <span className={`${className} inline-block align-middle relative`}>
+      {displayText.split('').map((char, idx) => (
+        <span
+          key={idx}
+          className={
+            fadeInIdx === idx
+              ? 'inline-block transition-opacity duration-200 opacity-0 animate-fade-in'
+              : 'inline-block transition-opacity duration-200 opacity-100'
+          }
+          style={{ transition: 'opacity 0.18s' }}
+        >
+          {char}
+        </span>
+      ))}
+      {/* Blinking, tall, accent cursor */}
+      <span
+        className="inline-block align-middle ml-1"
+        aria-hidden="true"
+        style={{
+          height: '1.1em',
+          width: '0.18em',
+          background: 'var(--accent, #00E0FF)',
+          borderRadius: '2px',
+          marginLeft: '0.1em',
+          verticalAlign: 'middle',
+          animation: 'typed-cursor-blink 1s steps(1) infinite',
+          display: 'inline-block',
+        }}
+      />
+      <style jsx>{`
+        @keyframes typed-cursor-blink {
+          0%, 49% { opacity: 1; }
+          50%, 100% { opacity: 0.2; }
+        }
+        .animate-fade-in {
+          opacity: 1 !important;
+        }
+      `}</style>
     </span>
   );
 }
