@@ -173,16 +173,6 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-sm font-medium text-accent border border-accent/20"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                Breakthrough Biosignal Technology
-              </motion.div>
-
               <div className="flex flex-col gap-4">
                 <div className="h-[240px] md:h-[280px] lg:h-[320px] flex items-end">
                   <div className="relative w-full">
