@@ -192,38 +192,8 @@ export default function Home() {
                   </h1>
                 </div>
               </div>
-            </motion.div>
-            {/* Right Column - Hand image and paragraph */}
-            <motion.div
-              className="flex flex-col lg:flex-row items-center gap-8"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="relative flex-shrink-0">
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-3xl blur-3xl"
-                  animate={{ 
-                    rotate: [0, 5, -5, 0],
-                    scale: [1, 1.05, 1]
-                  }}
-                  transition={{ 
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                ></motion.div>
-                <Image
-                  src="/assets/sleeve.png"
-                  alt="Neural prosthetic interface"
-                  width={600}
-                  height={600}
-                  className="relative z-10 w-full h-auto rounded-2xl shadow-2xl"
-                  priority
-                />
-              </div>
               <motion.p
-                className="text-xl md:text-2xl text-secondary leading-relaxed max-w-lg lg:ml-8 lg:mt-0 mt-8"
+                className="text-xl md:text-2xl text-secondary leading-relaxed max-w-lg mt-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -232,6 +202,34 @@ export default function Home() {
                 Our advanced EMG technology reads your <span className="text-accent font-medium">intent</span>, 
                 not just your actions.
               </motion.p>
+            </motion.div>
+            {/* Right Column - Hand image only */}
+            <motion.div
+              className="relative flex-shrink-0"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-3xl blur-3xl"
+                animate={{ 
+                  rotate: [0, 5, -5, 0],
+                  scale: [1, 1.05, 1]
+                }}
+                transition={{ 
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              ></motion.div>
+              <Image
+                src="/assets/sleeve.png"
+                alt="Neural prosthetic interface"
+                width={600}
+                height={600}
+                className="relative z-10 w-full h-auto rounded-2xl shadow-2xl"
+                priority
+              />
             </motion.div>
           </div>
           {/* Buttons and stats below */}
