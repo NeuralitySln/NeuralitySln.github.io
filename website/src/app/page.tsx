@@ -164,18 +164,18 @@ export default function Home() {
           ></motion.div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 py-24 relative z-10 flex flex-col justify-start" style={{ minHeight: '80vh', justifyContent: 'flex-start' }}>
-          <div className="grid lg:grid-cols-2 gap-16 items-center" style={{ alignItems: 'flex-start' }}>
+        <div className="max-w-7xl mx-auto px-6 py-10 relative z-10 flex flex-col justify-start" style={{ minHeight: '80vh', justifyContent: 'flex-start' }}>
+          <div className="grid lg:grid-cols-2 gap-16 items-center" style={{ alignItems: 'center', marginTop: '-5vh' }}>
             {/* Left Column - Headline and paragraph */}
             <motion.div
-              className="flex flex-col justify-start"
-              style={{ marginTop: 'calc(-10vh)' }}
+              className="flex flex-col justify-center h-full"
+              style={{ minHeight: '340px' }}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="h-[180px] md:h-[220px] lg:h-[260px] flex items-end">
-                <div className="relative w-full">
+              <div className="flex flex-col gap-6 justify-center h-full">
+                <div className="relative w-full" style={{ minHeight: '120px' }}>
                   {/* Invisible placeholder to reserve space for longest text */}
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary opacity-0 pointer-events-none">
                     Capture Human Intent
@@ -191,21 +191,23 @@ export default function Home() {
                     />
                   </h1>
                 </div>
+                <motion.p
+                  className="text-xl md:text-2xl text-secondary leading-relaxed max-w-lg mt-2 lg:mt-0"
+                  style={{ minHeight: '80px', display: 'flex', alignItems: 'center' }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                >
+                  Transform natural muscle movements into precise digital control. 
+                  Our advanced EMG technology reads your <span className="text-accent font-medium">intent</span>, 
+                  not just your actions.
+                </motion.p>
               </div>
-              <motion.p
-                className="text-xl md:text-2xl text-secondary leading-relaxed max-w-lg mt-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              >
-                Transform natural muscle movements into precise digital control. 
-                Our advanced EMG technology reads your <span className="text-accent font-medium">intent</span>, 
-                not just your actions.
-              </motion.p>
             </motion.div>
             {/* Right Column - Hand image only */}
             <motion.div
-              className="relative flex-shrink-0"
+              className="relative flex-shrink-0 flex items-center justify-center"
+              style={{ minHeight: '220px' }}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -232,9 +234,9 @@ export default function Home() {
               />
             </motion.div>
           </div>
-          {/* Buttons and stats below */}
+          {/* Buttons and stats below, but higher up */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 pt-8"
+            className="flex flex-col sm:flex-row gap-4 pt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
@@ -261,7 +263,7 @@ export default function Home() {
             </Link>
           </motion.div>
           <motion.div
-            className="flex items-center gap-8 pt-6 border-t border-gray-200/50"
+            className="flex items-center gap-8 pt-4 border-t border-gray-200/50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
