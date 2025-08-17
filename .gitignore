@@ -39,3 +39,6 @@ pids
 # Temporary folders
 tmp/
 temp/
+
+# Private planning documents
+plan.md
