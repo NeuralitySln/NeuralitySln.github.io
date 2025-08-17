@@ -184,15 +184,22 @@ export default function Home() {
                 </motion.div>
                 
                 <div className="h-[240px] md:h-[280px] lg:h-[320px] flex items-center justify-start">
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary w-full min-h-[200px] md:min-h-[240px] lg:min-h-[280px] flex items-center">
-                    <TypedText 
-                      texts={typedTexts}
-                      speed={100}
-                      deleteSpeed={50}
-                      pauseTime={3000}
-                      className="text-primary block"
-                    />
-                  </h1>
+                  <div className="relative">
+                    {/* Invisible placeholder to reserve space for longest text */}
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary opacity-0 pointer-events-none">
+                      Capture Human Intent
+                    </h1>
+                    {/* Actual typing text positioned absolutely */}
+                    <h1 className="absolute top-0 left-0 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary">
+                      <TypedText 
+                        texts={typedTexts}
+                        speed={100}
+                        deleteSpeed={50}
+                        pauseTime={3000}
+                        className="text-primary"
+                      />
+                    </h1>
+                  </div>
                 </div>
               </div>
               

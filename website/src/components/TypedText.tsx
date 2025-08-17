@@ -56,9 +56,9 @@ export default function TypedText({
   }, [displayText, textIndex, isDeleting, isPaused, texts, speed, deleteSpeed, pauseTime]);
 
   return (
-    <span className={className}>
-      {displayText}
-      <span className="animate-pulse text-accent text-base font-thin">|</span>
+    <span className={`${className} inline-block`}>
+      <span>{displayText}</span>
+      <span className="animate-pulse text-accent text-base font-thin ml-1">|</span>
     </span>
   );
 }
