@@ -81,9 +81,9 @@ export default function Home() {
         <Image
                 src="/assets/logo/neurality-logo.png"
                 alt="Neurality Solutions"
-                width={240}
-                height={60}
-                className="h-12 w-auto"
+                width={320}
+                height={80}
+                className="h-20 w-auto"
           priority
         />
             </motion.div>
@@ -164,104 +164,43 @@ export default function Home() {
           ></motion.div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Column - Text Content */}
+        <div className="max-w-7xl mx-auto px-6 py-24 relative z-10 flex flex-col justify-start" style={{ minHeight: '80vh', justifyContent: 'flex-start' }}>
+          <div className="grid lg:grid-cols-2 gap-16 items-center" style={{ alignItems: 'flex-start' }}>
+            {/* Left Column - Headline and paragraph */}
             <motion.div
-              className="space-y-6"
+              className="flex flex-col justify-start"
+              style={{ marginTop: 'calc(-10vh)' }}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="flex flex-col gap-4">
-                <div className="h-[240px] md:h-[280px] lg:h-[320px] flex items-end">
-                  <div className="relative w-full">
-                    {/* Invisible placeholder to reserve space for longest text */}
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary opacity-0 pointer-events-none">
-                      Capture Human Intent
-                    </h1>
-                    {/* Actual typing text positioned absolutely */}
-                    <h1 className="absolute top-0 left-0 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary">
-                      <TypedText 
-                        texts={typedTexts}
-                        speed={100}
-                        deleteSpeed={50}
-                        pauseTime={3000}
-                        className="text-primary"
-                      />
-                    </h1>
-                  </div>
+              <div className="h-[180px] md:h-[220px] lg:h-[260px] flex items-end">
+                <div className="relative w-full">
+                  {/* Invisible placeholder to reserve space for longest text */}
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary opacity-0 pointer-events-none">
+                    Capture Human Intent
+                  </h1>
+                  {/* Actual typing text positioned absolutely */}
+                  <h1 className="absolute top-0 left-0 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary">
+                    <TypedText 
+                      texts={typedTexts}
+                      speed={100}
+                      deleteSpeed={50}
+                      pauseTime={3000}
+                      className="text-primary"
+                    />
+                  </h1>
                 </div>
-                <motion.p
-                  className="text-xl md:text-2xl text-secondary leading-relaxed max-w-lg mt-2"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.8 }}
-                >
-                  Transform natural muscle movements into precise digital control. 
-                  Our advanced EMG technology reads your <span className="text-accent font-medium">intent</span>, 
-                  not just your actions.
-                </motion.p>
               </div>
-
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 pt-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-              >
-                <Link href="/watch-demo" passHref legacyBehavior>
-                  <motion.a
-                    className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/25 cursor-pointer"
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Play size={20} className="group-hover:scale-110 transition-transform" fill="currentColor" />
-                    Watch Demo
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
-                </Link>
-                <Link href="/explore-technology" passHref legacyBehavior>
-                  <motion.a
-                    className="inline-flex items-center gap-2 text-primary border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 hover:border-accent/30 transition-all duration-300 cursor-pointer"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Explore Technology
-                  </motion.a>
-                </Link>
-              </motion.div>
-
-              {/* Stats */}
-              <motion.div
-                className="flex items-center gap-8 pt-6 border-t border-gray-200/50"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-              >
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">&lt; 5ms</div>
-                  <div className="text-sm text-secondary">Latency</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">98.7%</div>
-                  <div className="text-sm text-secondary">Accuracy</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">24/7</div>
-                  <div className="text-sm text-secondary">Monitoring</div>
-                </div>
-              </motion.div>
             </motion.div>
-
-            {/* Right Column - Visual */}
-            <motion.div 
-              className="relative"
+            {/* Right Column - Hand image and paragraph */}
+            <motion.div
+              className="flex flex-col lg:flex-row items-center gap-8"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="relative">
+              <div className="relative flex-shrink-0">
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-3xl blur-3xl"
                   animate={{ 
@@ -274,7 +213,7 @@ export default function Home() {
                     ease: "easeInOut"
                   }}
                 ></motion.div>
-          <Image
+                <Image
                   src="/assets/sleeve.png"
                   alt="Neural prosthetic interface"
                   width={600}
@@ -283,8 +222,65 @@ export default function Home() {
                   priority
                 />
               </div>
+              <motion.p
+                className="text-xl md:text-2xl text-secondary leading-relaxed max-w-lg lg:ml-8 lg:mt-0 mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                Transform natural muscle movements into precise digital control. 
+                Our advanced EMG technology reads your <span className="text-accent font-medium">intent</span>, 
+                not just your actions.
+              </motion.p>
             </motion.div>
           </div>
+          {/* Buttons and stats below */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 pt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          >
+            <Link href="/watch-demo" passHref legacyBehavior>
+              <motion.a
+                className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/25 cursor-pointer"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Play size={20} className="group-hover:scale-110 transition-transform" fill="currentColor" />
+                Watch Demo
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </motion.a>
+            </Link>
+            <Link href="/explore-technology" passHref legacyBehavior>
+              <motion.a
+                className="inline-flex items-center gap-2 text-primary border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 hover:border-accent/30 transition-all duration-300 cursor-pointer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Explore Technology
+              </motion.a>
+            </Link>
+          </motion.div>
+          <motion.div
+            className="flex items-center gap-8 pt-6 border-t border-gray-200/50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary">&lt; 5ms</div>
+              <div className="text-sm text-secondary">Latency</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary">98.7%</div>
+              <div className="text-sm text-secondary">Accuracy</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-primary">24/7</div>
+              <div className="text-sm text-secondary">Monitoring</div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
