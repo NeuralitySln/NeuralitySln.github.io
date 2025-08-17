@@ -69,7 +69,7 @@ export default function TypedText({
   }, [fadeInIdx]);
 
   return (
-    <span className={`${className} inline-block align-middle relative`}>
+    <span className={`${className} inline-block align-middle relative`} style={{ whiteSpace: 'pre' }}>
       {displayText.split('').map((char, idx) => (
         <span
           key={idx}
@@ -80,18 +80,18 @@ export default function TypedText({
           }
           style={{ transition: 'opacity 0.18s' }}
         >
-          {char}
+          {char === ' ' ? '\u00A0' : char}
         </span>
       ))}
-      {/* Blinking, tall, accent cursor */}
+      {/* Blinking, tall, thin accent cursor */}
       <span
         className="inline-block align-middle ml-1"
         aria-hidden="true"
         style={{
           height: '1.1em',
-          width: '0.18em',
+          width: '2px',
           background: 'var(--accent, #00E0FF)',
-          borderRadius: '2px',
+          borderRadius: '1px',
           marginLeft: '0.1em',
           verticalAlign: 'middle',
           animation: 'typed-cursor-blink 1s steps(1) infinite',
