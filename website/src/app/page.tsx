@@ -121,8 +121,10 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-screen flex items-center bg-gradient-to-br from-background via-gray-50/30 to-background">
-        {/* Background Image */}
+        {/* Background Video/Image */}
         <div className="absolute inset-0 z-0">
+          {/* TODO: Replace with LSL signal monitor video when available */}
+          {/* For now, using static image with subtle animation */}
           <Image
             src="/assets/sleeve.png"
             alt="Neural prosthetic technology"
@@ -131,6 +133,20 @@ export default function Home() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90"></div>
+          
+          {/* Optional: Video overlay structure for future implementation */}
+          {/* 
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-20"
+          >
+            <source src="/assets/lsl-signal-monitor.mp4" type="video/mp4" />
+            <source src="/assets/lsl-signal-monitor.webm" type="video/webm" />
+          </video>
+          */}
         </div>
 
         {/* Animated Background Elements */}
@@ -482,27 +498,74 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Technology Demo Section */}
+          {/* Live Signal Demonstration */}
           <motion.div 
-            className="text-center"
+            className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 md:p-12 mb-20"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <motion.div
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Link 
-                href="/experience-technology"
-                className="group inline-flex items-center gap-4 bg-gradient-to-r from-primary to-accent text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300"
+            <div className="text-center mb-8">
+              <motion.div 
+                className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-sm font-medium text-accent border border-accent/20 mb-4"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
               >
-                <Play size={24} fill="currentColor" className="group-hover:scale-110 transition-transform" />
-                Experience the Technology
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                Live Signal Processing
+              </motion.div>
+              <h3 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                See Our Technology in Action
+              </h3>
+              <p className="text-lg text-secondary max-w-2xl mx-auto">
+                Watch real-time EMG signal processing through our Lab Streaming Layer (LSL) monitor, 
+                showcasing the precision and responsiveness of our breakthrough technology.
+              </p>
+            </div>
+            
+            {/* Video Container - Ready for LSL signal monitor video */}
+            <div className="relative bg-gray-900 rounded-2xl overflow-hidden aspect-video max-w-4xl mx-auto mb-8">
+              {/* Placeholder for video content */}
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
+                <div className="text-center text-white">
+                  <Play size={64} className="mx-auto mb-4 opacity-60" />
+                  <p className="text-lg font-medium">LSL Signal Monitor Demo</p>
+                  <p className="text-sm opacity-75 mt-2">Video content ready for integration</p>
+                </div>
+              </div>
+              
+              {/* TODO: Add actual video when ready */}
+              {/* 
+              <video 
+                controls
+                className="w-full h-full object-cover"
+                poster="/assets/video-poster.jpg"
+              >
+                <source src="/assets/lsl-signal-monitor-demo.mp4" type="video/mp4" />
+                <source src="/assets/lsl-signal-monitor-demo.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+              */}
+            </div>
+
+            <div className="text-center">
+              <motion.div
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link 
+                  href="/experience-technology"
+                  className="group inline-flex items-center gap-4 bg-gradient-to-r from-primary to-accent text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300"
+                >
+                  <Play size={24} fill="currentColor" className="group-hover:scale-110 transition-transform" />
+                  Experience the Technology
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
