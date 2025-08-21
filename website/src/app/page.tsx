@@ -24,10 +24,10 @@ export default function Home() {
   });
 
   const typedTexts = [
-    "Capture Human Intent",
-    "Control with Thought", 
-    "Move Beyond Buttons",
-    "Think. Act. Connect."
+    "Restore Natural Control",
+    "Unlock Human Potential", 
+    "Move Beyond Limitations",
+    "Think. Intent. Action."
   ];
 
   const techCards = [
@@ -178,7 +178,7 @@ export default function Home() {
                 <div className="relative w-full">
                   {/* Invisible placeholder to reserve space for longest text */}
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary opacity-0 pointer-events-none">
-                    Capture Human Intent
+                    Restore Natural Control
                   </h1>
                   {/* Actual typing text positioned absolutely */}
                   <h1 className="absolute top-0 left-0 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary">
@@ -198,9 +198,9 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                Transform natural muscle movements into precise digital control. 
-                Our advanced EMG technology reads your <span className="text-accent font-medium">intent</span>, 
-                not just your actions.
+                Breakthrough EMG technology that restores natural movement control for those who need it most. 
+                We read your <span className="text-accent font-medium">intent</span>, 
+                enabling seamless interaction with the digital world.
               </motion.p>
             </motion.div>
             {/* Right Column - Hand image only */}
@@ -239,26 +239,30 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
           >
-            <Link href="/watch-demo" passHref legacyBehavior>
-              <motion.a
+            <motion.div
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Link 
+                href="/watch-demo"
                 className="group inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/25 cursor-pointer"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
               >
                 <Play size={20} className="group-hover:scale-110 transition-transform" fill="currentColor" />
                 Watch Demo
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </motion.a>
-            </Link>
-            <Link href="/explore-technology" passHref legacyBehavior>
-              <motion.a
+              </Link>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Link 
+                href="/explore-technology"
                 className="inline-flex items-center gap-2 text-primary border-2 border-gray-200 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 hover:border-accent/30 transition-all duration-300 cursor-pointer"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
               >
                 Explore Technology
-              </motion.a>
-            </Link>
+              </Link>
+            </motion.div>
           </motion.div>
           <motion.div
             className="flex items-center gap-8 pt-6 border-t border-gray-200/50"
@@ -279,6 +283,88 @@ export default function Home() {
               <div className="text-sm text-secondary">Monitoring</div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Scientific Validation Section */}
+      <section className="py-16 bg-gradient-to-r from-gray-50/50 to-background border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-lg font-semibold text-secondary mb-2">
+              Validated by Science
+            </h3>
+            <p className="text-sm text-secondary max-w-2xl mx-auto">
+              Research-backed technology with proven performance metrics and patent protection
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-4 gap-8">
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div className="text-3xl font-bold text-primary mb-2">US Patent</div>
+              <div className="text-sm text-secondary">Filed & Protected</div>
+            </motion.div>
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
+                <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div className="text-3xl font-bold text-primary mb-2">&lt;5ms</div>
+              <div className="text-sm text-secondary">Real-time Latency</div>
+            </motion.div>
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <div className="text-3xl font-bold text-primary mb-2">98.7%</div>
+              <div className="text-sm text-secondary">Signal Accuracy</div>
+            </motion.div>
+            <motion.div 
+              className="text-center group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
+                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+              <div className="text-3xl font-bold text-primary mb-2">Research</div>
+              <div className="text-sm text-secondary">Validated</div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -303,13 +389,13 @@ export default function Home() {
               Revolutionary Technology Stack
             </motion.div>
             <h2 className="text-5xl md:text-6xl font-bold text-primary mb-8 leading-tight">
-              Advanced Biosignal
+              Empowering Human
               <br />
-              <span className="text-accent">Technology</span>
+              <span className="text-accent">Connection</span>
             </h2>
             <p className="text-xl text-secondary leading-relaxed max-w-3xl mx-auto">
-              Our breakthrough approach combines cutting-edge electromyography with AI-powered signal processing 
-              to create the most intuitive human-machine interfaces ever developed.
+              We're bridging the gap between human intent and digital interaction through revolutionary EMG technology 
+              that understands what you want to do, not just what you can do.
             </p>
           </motion.div>
 
@@ -404,17 +490,19 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Link href="/experience-technology" passHref legacyBehavior>
-              <motion.button 
+            <motion.div
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Link 
+                href="/experience-technology"
                 className="group inline-flex items-center gap-4 bg-gradient-to-r from-primary to-accent text-white px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.98 }}
               >
                 <Play size={24} fill="currentColor" className="group-hover:scale-110 transition-transform" />
                 Experience the Technology
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-            </Link>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -429,13 +517,13 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl md:text-6xl font-bold text-primary mb-8 leading-tight">
-              Ready to Transform
+              Ready to Unlock
               <br />
-              <span className="text-accent">Human-Computer Interaction?</span>
+              <span className="text-accent">Human Potential?</span>
             </h2>
             <p className="text-xl md:text-2xl text-secondary mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join the revolution in intuitive technology interfaces. Let's explore how our breakthrough 
-              biosignal solutions can transform your vision into reality.
+              Whether you're a researcher, clinician, or someone who could benefit from natural movement restoration, 
+              let's explore how our breakthrough technology can make a difference.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <motion.button 
