@@ -32,7 +32,7 @@ export default function Navigation() {
                 alt="Neurality Solutions"
                 width={320}
                 height={80}
-                className="h-20 w-auto"
+                className="h-20 w-auto cursor-pointer hover:opacity-90 transition-opacity"
                 priority
               />
             </Link>

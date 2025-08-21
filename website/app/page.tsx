@@ -78,14 +78,16 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-        <Image
-                src="/assets/logo/neurality-logo.png"
-                alt="Neurality Solutions"
-                width={320}
-                height={80}
-                className="h-20 w-auto"
-          priority
-        />
+              <Link href="/">
+                <Image
+                  src="/assets/logo/neurality-logo.png"
+                  alt="Neurality Solutions"
+                  width={320}
+                  height={80}
+                  className="h-20 w-auto cursor-pointer hover:opacity-90 transition-opacity"
+                  priority
+                />
+              </Link>
             </motion.div>
             <motion.nav 
               className="hidden md:flex items-center space-x-8"
@@ -101,6 +103,9 @@ export default function Home() {
               </Link>
               <Link href="/about" className="text-sm font-medium text-secondary hover:text-accent transition-all duration-200 hover:scale-105">
                 About
+              </Link>
+              <Link href="/contact" className="text-sm font-medium text-secondary hover:text-accent transition-all duration-200 hover:scale-105">
+                Contact
               </Link>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link 
