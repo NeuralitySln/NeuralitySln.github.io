@@ -99,16 +99,17 @@ export default function Home() {
               <Link href="/science" className="text-sm font-medium text-secondary hover:text-accent transition-all duration-200 hover:scale-105">
                 Science
               </Link>
-              <a href="#about" className="text-sm font-medium text-secondary hover:text-accent transition-all duration-200 hover:scale-105">
+              <Link href="/about" className="text-sm font-medium text-secondary hover:text-accent transition-all duration-200 hover:scale-105">
                 About
-              </a>
-              <motion.button 
-                className="bg-accent text-primary px-6 py-2 rounded-lg font-medium hover:bg-accent/90 transition-all duration-200 hover:shadow-lg hover:shadow-accent/25"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Contact Us
-              </motion.button>
+              </Link>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link 
+                  href="/contact"
+                  className="bg-accent text-primary px-6 py-2 rounded-lg font-medium hover:bg-accent/90 transition-all duration-200 hover:shadow-lg hover:shadow-accent/25 inline-block"
+                >
+                  Contact Us
+                </Link>
+              </motion.div>
             </motion.nav>
             <button className="md:hidden p-2">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

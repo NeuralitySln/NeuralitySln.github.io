@@ -12,7 +12,8 @@ export default function Navigation() {
   const navLinks = [
     { href: "/#technology", label: "Technology" },
     { href: "/science", label: "Science" }, 
-    { href: "/#about", label: "About" }
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" }
   ];
 
   return (
@@ -53,13 +54,14 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <motion.button 
-              className="bg-accent text-primary px-6 py-2 rounded-lg font-medium hover:bg-accent/90 transition-all duration-200 hover:shadow-lg hover:shadow-accent/25"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Contact Us
-            </motion.button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link 
+                href="/contact"
+                className="bg-accent text-primary px-6 py-2 rounded-lg font-medium hover:bg-accent/90 transition-all duration-200 hover:shadow-lg hover:shadow-accent/25 inline-block"
+              >
+                Contact Us
+              </Link>
+            </motion.div>
           </motion.nav>
 
           {/* Mobile Menu Button */}
@@ -90,9 +92,13 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <button className="bg-accent text-primary px-6 py-2 rounded-lg font-medium hover:bg-accent/90 transition-colors w-full">
+              <Link 
+                href="/contact"
+                className="bg-accent text-primary px-6 py-2 rounded-lg font-medium hover:bg-accent/90 transition-colors w-full text-center inline-block"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Contact Us
-              </button>
+              </Link>
             </div>
           </motion.nav>
         )}
