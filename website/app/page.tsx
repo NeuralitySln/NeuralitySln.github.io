@@ -99,9 +99,6 @@ export default function Home() {
               <Link href="/science" className="text-sm font-medium text-secondary hover:text-accent transition-all duration-200 hover:scale-105">
                 Science
               </Link>
-              <a href="#research" className="text-sm font-medium text-secondary hover:text-accent transition-all duration-200 hover:scale-105">
-                Research
-              </a>
               <a href="#about" className="text-sm font-medium text-secondary hover:text-accent transition-all duration-200 hover:scale-105">
                 About
               </a>

@@ -12,7 +12,6 @@ export default function Navigation() {
   const navLinks = [
     { href: "/#technology", label: "Technology" },
     { href: "/science", label: "Science" }, 
-    { href: "/#research", label: "Research" },
     { href: "/#about", label: "About" }
   ];
 
