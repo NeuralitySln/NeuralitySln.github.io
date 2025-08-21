@@ -93,7 +93,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="font-semibold text-primary">Location</div>
-                      <div className="text-gray-600">Research & Development Hub</div>
+                      <div className="text-gray-600">Laguna Beach, Southern California</div>
+                      <div className="text-sm text-gray-500 mt-1">Where innovation meets the Pacific 🌊</div>
                     </div>
                   </div>
 

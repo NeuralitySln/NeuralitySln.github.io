@@ -6,6 +6,7 @@ import { ArrowRight, Brain, Zap, Target, Play } from "lucide-react";
 import { motion } from "framer-motion";
 import TypedText from "@/components/TypedText";
 import ImageModal from "@/components/ImageModal";
+import DarkModeAwareLogo from "@/components/DarkModeAwareLogo";
 import Link from "next/link";
 
 export default function Home() {
@@ -78,16 +79,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Link href="/">
-                <Image
-                  src="/assets/logo/neurality-logo.png"
-                  alt="Neurality Solutions"
-                  width={320}
-                  height={80}
-                  className="h-20 w-auto cursor-pointer hover:opacity-90 transition-opacity"
-                  priority
-                />
-              </Link>
+              <DarkModeAwareLogo />
             </motion.div>
             <motion.nav 
               className="hidden md:flex items-center space-x-8"
@@ -630,38 +622,37 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-          <Image
-                src="/assets/logo/neurality-logo.png"
-                alt="Neurality Solutions"
-                width={160}
-                height={40}
-                className="h-8 w-auto mb-4"
-              />
+              <div className="h-8 mb-4">
+                <DarkModeAwareLogo />
+              </div>
               <p className="text-sm text-secondary max-w-md">
                 Pioneering the future of human-computer interaction through advanced biosignal technology 
                 and intelligent muscle control interfaces.
+              </p>
+              <p className="text-xs text-gray-400 mt-4">
+                Crafted with ☀️ and 🌊 in Laguna Beach, CA
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-4">Technology</h4>
               <ul className="space-y-2 text-sm text-secondary">
-                <li><a href="#" className="hover:text-foreground transition-colors">EMG Sensors</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Signal Processing</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Machine Learning</a></li>
+                <li><Link href="/#technology" className="hover:text-foreground transition-colors">EMG Sensors</Link></li>
+                <li><Link href="/science" className="hover:text-foreground transition-colors">Signal Processing</Link></li>
+                <li><Link href="/science#methodology" className="hover:text-foreground transition-colors">Machine Learning</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-medium mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-secondary">
-                <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Careers</a></li>
+                <li><Link href="/about" className="hover:text-foreground transition-colors">About</Link></li>
+                <li><Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
+                <li><Link href="/about#team" className="hover:text-foreground transition-colors">Team</Link></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-200/50 mt-12 pt-8">
             <p className="text-sm text-secondary text-center">
-              © 2024 Neurality Solutions. All rights reserved.
+              © 2025 Neurality Solutions. All rights reserved.
             </p>
           </div>
         </div>

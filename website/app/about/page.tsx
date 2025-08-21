@@ -136,31 +136,42 @@ export default function AboutPage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {/* Placeholder team members - replace with actual team data */}
-              <div className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mx-auto mb-4"></div>
+              <div className="text-center group">
+                <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mx-auto mb-4 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-4xl">🏄‍♂️</span>
+                  </div>
+                </div>
                 <h3 className="text-xl font-semibold text-primary mb-2">Research Lead</h3>
                 <p className="text-gray-600 text-sm mb-3">Biomedical Engineering</p>
                 <p className="text-gray-500 text-sm">
-                  Leading breakthrough research in EMG signal processing and neural interfaces
+                  Leading breakthrough research in EMG signal processing between surf sessions
                 </p>
               </div>
 
-              <div className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mx-auto mb-4"></div>
+              <div className="text-center group">
+                <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mx-auto mb-4 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-4xl">☕</span>
+                  </div>
+                </div>
                 <h3 className="text-xl font-semibold text-primary mb-2">Engineering Lead</h3>
                 <p className="text-gray-600 text-sm mb-3">Hardware & Software Systems</p>
                 <p className="text-gray-500 text-sm">
-                  Developing robust, real-time systems for clinical and consumer applications
+                  Fueled by Pacific Coast coffee, building the future of human-computer interaction
                 </p>
               </div>
 
-              <div className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mx-auto mb-4"></div>
+              <div className="text-center group">
+                <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mx-auto mb-4 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-4xl">🌴</span>
+                  </div>
+                </div>
                 <h3 className="text-xl font-semibold text-primary mb-2">Clinical Advisor</h3>
                 <p className="text-gray-600 text-sm mb-3">Rehabilitation Medicine</p>
                 <p className="text-gray-500 text-sm">
-                  Ensuring our technology meets real clinical needs and safety standards
+                  Bringing SoCal wellness vibes to medical technology innovation
                 </p>
               </div>
             </div>

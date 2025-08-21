@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import DarkModeAwareLogo from "./DarkModeAwareLogo";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,16 +26,7 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/">
-              <Image
-                src="/assets/logo/neurality-logo.png"
-                alt="Neurality Solutions"
-                width={320}
-                height={80}
-                className="h-20 w-auto cursor-pointer hover:opacity-90 transition-opacity"
-                priority
-              />
-            </Link>
+            <DarkModeAwareLogo />
           </motion.div>
           
           {/* Desktop Navigation */}
