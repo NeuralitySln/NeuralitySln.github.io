@@ -20,6 +20,17 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 
+# Next.js build output
+website/.next/
+website/out/
+website/build/
+website/.vercel/
+website/.turbo/
+
+# Next.js development
+website/.env*.local
+website/*.log
+
 # IDE
 .vscode/
 .idea/
