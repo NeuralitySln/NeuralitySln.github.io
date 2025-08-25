@@ -188,14 +188,14 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="h-[200px] md:h-[280px] lg:h-[320px] xl:h-[380px] flex items-end">
-                <div className="relative w-full">
+              <div className="h-[200px] md:h-[280px] lg:h-[320px] xl:h-[380px] flex items-end overflow-hidden">
+                <div className="relative w-full overflow-hidden">
                   {/* Invisible placeholder to reserve space for longest text */}
                   <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.9] text-primary opacity-0 pointer-events-none">
                     Restore Natural Control
                   </h1>
                   {/* Actual typing text positioned absolutely */}
-                  <h1 className="absolute top-0 left-0 text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.9] text-primary">
+                  <h1 className="absolute top-0 left-0 w-full text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.9] text-primary overflow-hidden">
                     <TypedText 
                       texts={typedTexts}
                       speed={100}
@@ -620,16 +620,16 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-gray-200/50 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
-              <div className="h-8 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="col-span-1 md:col-span-2 mb-8 md:mb-0">
+              <div className="h-8 mb-4 w-fit">
                 <DarkModeAwareLogo />
               </div>
-              <p className="text-sm text-secondary max-w-md">
+              <p className="text-sm text-secondary max-w-md mb-4">
                 Pioneering the future of human-computer interaction through advanced biosignal technology 
                 and intelligent muscle control interfaces.
               </p>
-              <p className="text-xs text-gray-400 mt-4">
+              <p className="text-xs text-gray-400">
                 Crafted with ☀️ and 🌊 in Laguna Beach, CA
               </p>
             </div>
