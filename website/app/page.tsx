@@ -188,14 +188,14 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="h-[180px] md:h-[220px] lg:h-[260px] flex items-end">
+              <div className="h-[200px] md:h-[280px] lg:h-[320px] xl:h-[380px] flex items-end">
                 <div className="relative w-full">
                   {/* Invisible placeholder to reserve space for longest text */}
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary opacity-0 pointer-events-none">
+                  <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.9] text-primary opacity-0 pointer-events-none">
                     Restore Natural Control
                   </h1>
                   {/* Actual typing text positioned absolutely */}
-                  <h1 className="absolute top-0 left-0 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary">
+                  <h1 className="absolute top-0 left-0 text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.9] text-primary">
                     <TypedText 
                       texts={typedTexts}
                       speed={100}
@@ -402,7 +402,7 @@ export default function Home() {
               <Zap size={16} className="text-primary" />
               Revolutionary Technology Stack
             </motion.div>
-            <h2 className="text-5xl md:text-6xl font-bold text-primary mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-8 leading-tight">
               Empowering Human
               <br />
               <span className="text-accent">Connection</span>
@@ -577,7 +577,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-primary mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-8 leading-tight">
               Ready to Unlock
               <br />
               <span className="text-accent">Human Potential?</span>
