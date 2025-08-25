@@ -182,20 +182,20 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             {/* Left Column - Headline and paragraph */}
             <motion.div
-              className="flex flex-col justify-start order-2 lg:order-1"
+              className="flex flex-col justify-start order-2 lg:order-1 lg:pr-8"
               style={{ marginTop: 'calc(-10vh)' }}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="h-[200px] md:h-[280px] lg:h-[320px] xl:h-[380px] flex items-end">
-                <div className="relative w-full max-w-full">
+                <div className="relative w-full">
                   {/* Invisible placeholder to reserve space for longest text */}
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.9] text-primary opacity-0 pointer-events-none max-w-full">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[0.9] text-primary opacity-0 pointer-events-none">
                     Move Beyond Limitations
                   </h1>
                   {/* Actual typing text positioned absolutely */}
-                  <h1 className="absolute top-0 left-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.9] text-primary max-w-full break-words">
+                  <h1 className="absolute top-0 left-0 text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[0.9] text-primary">
                     <TypedText 
                       texts={typedTexts}
                       speed={100}
