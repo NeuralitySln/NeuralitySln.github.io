@@ -622,16 +622,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2 mb-8 md:mb-0">
-              <div className="h-8 mb-4 w-fit">
+              <div className="h-8 mb-6 w-fit clear-both">
                 <DarkModeAwareLogo />
               </div>
-              <p className="text-sm text-secondary max-w-md mb-4">
-                Pioneering the future of human-computer interaction through advanced biosignal technology 
-                and intelligent muscle control interfaces.
-              </p>
-              <p className="text-xs text-gray-400">
-                Crafted with ☀️ and 🌊 in Laguna Beach, CA
-              </p>
+              <div className="clear-both">
+                <p className="text-sm text-secondary max-w-full sm:max-w-md mb-4 leading-relaxed">
+                  Pioneering the future of human-computer interaction through advanced biosignal technology 
+                  and intelligent muscle control interfaces.
+                </p>
+                <p className="text-xs text-gray-400">
+                  Crafted with ☀️ and 🌊 in Laguna Beach, CA
+                </p>
+              </div>
             </div>
             <div>
               <h4 className="font-medium mb-4">Technology</h4>
