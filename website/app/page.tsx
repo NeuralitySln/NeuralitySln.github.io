@@ -628,6 +628,9 @@ export default function Home() {
                 <DarkModeAwareLogo />
               </div>
               <div className="clear-both">
+                <p className="text-xs text-gray-400">
+                  .
+                </p>
                 <p className="text-sm text-secondary max-w-full sm:max-w-md mb-4 leading-relaxed">
                   Pioneering the future of human-computer interaction through advanced biosignal technology 
                   and intelligent muscle control interfaces.
