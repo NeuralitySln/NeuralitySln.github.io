@@ -179,23 +179,23 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 py-24 relative z-10 flex flex-col justify-start" style={{ minHeight: '80vh', justifyContent: 'flex-start' }}>
-          <div className="grid lg:grid-cols-2 gap-16 items-center" style={{ alignItems: 'flex-start' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             {/* Left Column - Headline and paragraph */}
             <motion.div
-              className="flex flex-col justify-start"
+              className="flex flex-col justify-start order-2 lg:order-1"
               style={{ marginTop: 'calc(-10vh)' }}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="h-[200px] md:h-[280px] lg:h-[320px] xl:h-[380px] flex items-end overflow-hidden">
-                <div className="relative w-full overflow-hidden">
+              <div className="h-[200px] md:h-[280px] lg:h-[320px] xl:h-[380px] flex items-end">
+                <div className="relative w-full max-w-full">
                   {/* Invisible placeholder to reserve space for longest text */}
-                  <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.9] text-primary opacity-0 pointer-events-none">
-                    Restore Natural Control
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.9] text-primary opacity-0 pointer-events-none max-w-full">
+                    Move Beyond Limitations
                   </h1>
                   {/* Actual typing text positioned absolutely */}
-                  <h1 className="absolute top-0 left-0 w-full text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.9] text-primary overflow-hidden">
+                  <h1 className="absolute top-0 left-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.9] text-primary max-w-full break-words">
                     <TypedText 
                       texts={typedTexts}
                       speed={100}
@@ -219,7 +219,7 @@ export default function Home() {
             </motion.div>
             {/* Right Column - Hand image only */}
             <motion.div
-              className="relative flex-shrink-0"
+              className="relative flex-shrink-0 order-1 lg:order-2"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
