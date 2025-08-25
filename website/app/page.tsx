@@ -219,31 +219,33 @@ export default function Home() {
             </motion.div>
             {/* Right Column - Hand image only */}
             <motion.div
-              className="relative flex-shrink-0 order-1 lg:order-2"
+              className="relative flex-shrink-0 order-1 lg:order-2 flex justify-center lg:justify-start lg:pl-8"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-3xl blur-3xl"
-                animate={{ 
-                  rotate: [0, 5, -5, 0],
-                  scale: [1, 1.05, 1]
-                }}
-                transition={{ 
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              ></motion.div>
-              <Image
-                src="/assets/sleeve.png"
-                alt="Neural prosthetic interface"
-                width={600}
-                height={600}
-                className="relative z-10 w-full h-auto rounded-2xl shadow-2xl"
-                priority
-              />
+              <div className="relative max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-3xl blur-3xl"
+                  animate={{ 
+                    rotate: [0, 5, -5, 0],
+                    scale: [1, 1.05, 1]
+                  }}
+                  transition={{ 
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                ></motion.div>
+                <Image
+                  src="/assets/sleeve.png"
+                  alt="Neural prosthetic interface"
+                  width={600}
+                  height={600}
+                  className="relative z-10 w-full h-auto rounded-2xl shadow-2xl"
+                  priority
+                />
+              </div>
             </motion.div>
           </div>
           {/* Buttons and stats below */}
